@@ -1,6 +1,14 @@
 /* Exercício 1: Criar uma transição para quando o mouse estiver em cima dos
  * botões play/stop (para que o elemento se revele lentamente)
  */
+ 
+#controles ul{
+    -webkit-transition: transform 500ms linear;
+    -moz-transition: transform 500ms linear;
+    -ms-transition: transform 500ms linear;
+    -o-transition: transform 500ms linear;
+    transition: transform 500ms linear; 
+}
 
 /*
  * Exercício 2: Criar uma imagem sprite com as imagens de todos os 9 animais e,
@@ -10,18 +18,49 @@
  * sprite). O código html das imagens dos animais é gerado dinamicamente por
  * jogo.js. Mais especificamente, procure pela função preencheAnimaisNaTela().
  */
-.animal { }
-.animal img { }
-#peixe img { }
-#leao img { }
-#gato img { }
-#cachorro img { }
-#girafa img { }
-#rato img { }
-#hipopotamo img { }
-#coelho img { }
-#urso img { }
-
+.animal {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+.animal img {
+    width: 998px;
+    height: 396px;
+    position: absolute;
+}
+#peixe img { 
+    left: -599px; top: 0px;
+}
+#leao img { 
+    left: -799px;top: 0px;
+}
+#gato img { 
+    left: -599px;top: -198px;
+}
+#cachorro img { 
+    left: 0px; top: 0px;
+}
+#girafa img { 
+    left: -199px;top: -198px;
+}
+#rato img { 
+    left: -399px; top: 0px;
+}
+#hipopotamo img { 
+    left: 0px;top: -198px;
+}
+#coelho img { 
+    left: -399px;top: -198px;
+}
+#urso img { 
+    left: -199px;top: 0px;
+}
+.animal .desconecido {
+    position: static;
+    width: 200px;
+    height: 200px;
+}
 /*
  * Exercício 3: Você deve implementar uma metáfora visual para cada um dos 4
  * estados dos animais. Algumas sugestões:
@@ -30,8 +69,8 @@
  *   - perturbado: animal fica pulsando
  *   - instinto-selvagem: animal dá um salto e cresce, com uma borda vermelha
  */
-.agitado { }
-.agitado img { }
+.agitado {}
+.agitado img {}
 
 .alimentado { }
 .alimentado img { }
