@@ -178,7 +178,7 @@ body {
   transition: border-color 250ms ease-out;
 }
 
-.animal:not(.alimentado):not(.perturbado):not(.instinto-selvagem) > img:hover {
+.animal:not(.alimentado):not(.perturbado):not(.instinto-selvagem):hover {
   border-color: silver;
 }
 

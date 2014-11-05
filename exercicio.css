@@ -21,45 +21,65 @@
 .animal {
     width: 200px;
     height: 200px;
-    overflow: hidden;
+    overflow: hidden; 
     position: relative;
+    margin-top:50px;
+    background: url(imgs/sprites.png) no-repeat;
+    border: 5px solid white;
+    border-radius: 110px;
+    margin-bottom:100px;
+    margin-top:50px;
 }
 .animal img {
     width: 998px;
     height: 396px;
     position: absolute;
 }
-#peixe img { 
-    left: -599px; top: 0px;
+#cachorro{
+	background-position: 0 0;
 }
-#leao img { 
-    left: -799px;top: 0px;
+
+#coelho{
+	background-position: -399px -198px ;
 }
-#gato img { 
-    left: -599px;top: -198px;
+
+#gato{
+	background-position: -599px -198px ;
 }
-#cachorro img { 
-    left: 0px; top: 0px;
+
+#girafa{
+	background-position: -199px -198px ;
 }
-#girafa img { 
-    left: -199px;top: -198px;
+
+#hipopotamo{
+	background-position: 0 -198px ;
 }
-#rato img { 
-    left: -399px; top: 0px;
+
+#leao{
+	background-position: -799px 0;
 }
-#hipopotamo img { 
-    left: 0px;top: -198px;
+
+#peixe{
+	background-position: -599px 0;
+
 }
-#coelho img { 
-    left: -399px;top: -198px;
+
+#rato{
+	background-position: -399px 0;
 }
-#urso img { 
-    left: -199px;top: 0px;
+
+#urso{
+	background-position: -199px 0;
 }
-.animal .desconecido {
-    position: static;
+
+
+.animal .desconhecido {
+    position: relative;
     width: 200px;
     height: 200px;
+    top:-10px;
+    left:-10px;
+    border: none;
 }
 /*
  * Exercício 3: Você deve implementar uma metáfora visual para cada um dos 4
@@ -69,14 +89,57 @@
  *   - perturbado: animal fica pulsando
  *   - instinto-selvagem: animal dá um salto e cresce, com uma borda vermelha
  */
-.agitado {}
-.agitado img {}
+.agitado {
+    position: relative;
+    -webkit-animation: piscando 1s ease-in-out 0 infinite alternate;
+    -moz-animation: piscando 1s ease-in-out 0 infinite alternate
+}
 
-.alimentado { }
-.alimentado img { }
-
-.perturbado { }
-.perturbado img { }
-
-.instinto-selvagem { }
-.instinto-selvagem img { }
+.alimentado {
+    border-color:green;
+    -webkit-animation: rodando 1s ease-in-out 0 infinite alternate;
+    -moz-animation: rodando 1s ease-in-out 0 infinite alternate;
+}
+.perturbado {
+    -webkit-animation: pulsando 0.25s ease-in-out 0 infinite alternate;
+    -moz-animation: pulsando 0.25s ease-in-out 0 infinite alternate;
+}
+.instinto-selvagem {
+    border-color:red;
+    -webkit-animation: cresce 0.75s ease-in-out 0 infinite alternate;
+    -moz-animation: cresce 0.75s ease-in-out 0 infinite alternate;
+}
+/*Seção dedicada à compatibilidade com o chrome*/
+@-webkit-keyframes piscando {
+  from { opacity: 1;     }
+  to   { opacity: 0.5; }
+}
+@-webkit-keyframes rodando {
+  from { transform: rotate(0deg)     }
+  to   { transform: rotate(360deg) }
+}
+@-webkit-keyframes pulsando {
+  from { transform: scale(1,1)    }
+  to   { transform: scale(1.2,1.2) }
+}
+@-webkit-keyframes cresce {
+  from { top:0px;transform: scale(1,1)    }
+  to   { top:-100px;transform: scale(1.5,1.5) }
+}
+/*Seção dedicada à compatibilidade com o mozila*/
+@-moz-keyframes piscando {
+  from { opacity: 1;     }
+  to   { opacity: 0.5; }
+}
+@-moz-keyframes rodando {
+  from { transform: rotate(0deg)     }
+  to   { transform: rotate(360deg) }
+}
+@-moz-keyframes pulsando {
+  from { transform: scale(1,1)    }
+  to   { transform: scale(1.2,1.2) }
+}
+@-moz-keyframes cresce {
+  from { top:0px;transform: scale(1,1)    }
+  to   { top:-100px;transform: scale(1.5,1.5) }
+}

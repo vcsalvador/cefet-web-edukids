@@ -43,7 +43,6 @@ function preencheAnimaisNaTela() {
 
   for (i = 0; i < animais.length; i++) {
     markupAnimais += '<figure class="animal" id="' + animais[i] + '">' +
-                     '  <img src="imgs/sprites.png">' +
                      '</figure>';
   }
 
